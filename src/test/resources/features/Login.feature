@@ -14,13 +14,13 @@ Feature: Login
 #    And I click login button
 #    And I should see "Invalid username/password" text
 
-  @smoke @sanity
-    Scenario Outline: Login scenario
-      Then I fill in "<password>" as password
-      And I click login button
-      And I should see "<textValidation>" text
-      Examples:
-        | password   | textValidation              |
-        | Honda2020! | Announcement                |
-        | password   | Invalid username / password |
+#  @smoke @sanity
+#    Scenario Outline: Login scenario
+#      Then I fill in "<password>" as password
+#      And I click login button
+#      And I should see "<textValidation>" text
+#      Examples:
+#        | password   | textValidation              |
+#        | Honda2020! | Announcement                |
+#        | password   | Invalid username / password |
 
