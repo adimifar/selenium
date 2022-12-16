@@ -36,7 +36,7 @@ public class WebDriverManager {
 //    }
 
 //    public WebDriver webDriverFactory() throws MalformedURLException {
-        final String DOCKER_HOST="http://localhost:4444";
+        final String DOCKER_HOST="http://172.17.0.2:4444";
         String remote = String.format("%s/wd/hub", DOCKER_HOST);
         return new RemoteWebDriver(new URL(remote), new ChromeOptions());
     }
