@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +24,7 @@ public class WebDriverManager {
     @Bean
     @Scope("cucumber-glue")
 //    public WebDriver webDriverFactory(){
+    public WebDriver webDriverFactory() throws MalformedURLException {
 //        if(browser.equalsIgnoreCase("chrome")){
 //            return new ChromeDriver();
 //        }
@@ -33,9 +35,9 @@ public class WebDriverManager {
 //            return new EdgeDriver();
 //    }
 
-    public WebDriver webDriverFactory() throws MalformedURLException {
-        final String DOCKER_HOST = "https://fab8-182-0-243-179.ap.ngrok.io";
+//    public WebDriver webDriverFactory() throws MalformedURLException {
+        final String DOCKER_HOST = "http://localhost:4444";
         String remote = String.format("%s/wd/hub", DOCKER_HOST);
-        return new RemoteWebDriver(new URL(remote), new EdgeOptions());
+        return new RemoteWebDriver(new URL(remote), new ChromeOptions());
     }
 }
